@@ -31,16 +31,57 @@ const HireForm = () => {
   };
 
   const handleDomainChange = (domain) => {
-    const updated = formData.domains.includes(domain)
+    const updatedDomains = formData.domains.includes(domain)
       ? formData.domains.filter((d) => d !== domain)
       : [...formData.domains, domain];
-    setFormData({ ...formData, domains: updated });
+    setFormData({ ...formData, domains: updatedDomains });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Application submitted successfully!");
+
+    const form = new FormData();
+    form.append("fullName", formData.fullName);
+    form.append("email", formData.email);
+    form.append("phone", formData.phone);
+    form.append("position", formData.position);
+    form.append("skills", formData.skills);
+    form.append("message", formData.message);
+    form.append("resume", formData.resume);
+
+    // If backend expects JSON-parsable array, stringify
+    form.append("domains", JSON.stringify(formData.domains));
+
+    try {
+      const res = await fetch("http://localhost:5000/api/hire", {
+        method: "POST",
+        body: form,
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("Application submitted successfully!");
+
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          position: "",
+          domains: [],
+          skills: "",
+          message: "",
+          resume: null,
+        });
+
+        // Reset file input manually
+        document.getElementById("resumeInput").value = "";
+      } else {
+        alert("Submission failed: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Server error. Please try again later.");
+    }
   };
 
   return (
@@ -82,7 +123,7 @@ const HireForm = () => {
           required
         />
 
-        {/* Domain Selection */}
+        {/* Domains */}
         <div className="skillssection">
           <label className="skillslabel">Development Domains:</label>
           <div className="skillslist">
@@ -112,6 +153,7 @@ const HireForm = () => {
         <div className="fileupload">
           <label className="uploadlabel">Upload Resume (PDF/DOCX):</label>
           <input
+            id="resumeInput"
             type="file"
             name="resume"
             accept=".pdf,.doc,.docx"

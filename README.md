@@ -17,6 +17,69 @@ A modern, multi-page, responsive website built for an IT services company using 
 
 ---
 
+## 🧩 Backend
+
+- **Server**: Node.js, Express.js
+- **Database**: MongoDB (MongoDB Atlas)
+- **ODM**: Mongoose
+- **Validation**: Express Validator
+- **Security**: dotenv, CORS, Helmet
+- **File Uploads**: Multer (for resume upload)
+- **Deployment**: Render / Railway / VPS
+
+### 📁 Backend Structure
+
+```
+backend/
+├── models/
+│   └── HireForm.js          # Mongoose schema
+├── routes/
+│   └── HireRoutes.js        # Hire form API routes
+├── uploads/                 # Uploaded resumes
+├── .env                     # Mongo URI and secrets
+├── server.js                # Entry point
+└── package.json
+```
+
+### 📨 API Endpoints
+
+| Method | Endpoint        | Description               |
+|--------|------------------|---------------------------|
+| POST   | `/api/hire`      | Submit hire form data     |
+| GET    | `/api/hire`      | (Optional) Get submissions|
+
+### 🔧 Backend Setup
+
+1. Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+2. Install backend dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file with your MongoDB credentials:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+```
+
+4. Start the backend server:
+
+```bash
+npm start
+```
+
+5. Test the `/api/hire` route using Postman or frontend form.
+
+---
+
 ## 📌 Features
 
 - ⚡ Fast and lightweight performance with Vite
@@ -61,7 +124,7 @@ git clone https://github.com/your-username/elite-it-website.git
 cd elite-it-website
 ```
 
-### 2. Install dependencies
+### 2. Install frontend dependencies
 
 ```bash
 npm install
@@ -109,10 +172,17 @@ You can deploy the production-ready build to:
 
 Make sure to configure `vite.config.js` properly for GitHub Pages (e.g., `base` path if in a subdirectory).
 
+Backend can be deployed using:
+
+- **Render**
+- **Railway**
+- **VPS / DigitalOcean / EC2**
+
+Ensure `.env` values are set securely on the server.
+
 ---
 
 ## 📸 Screenshots
-
 
 ![alt text](image.png)
 ![alt text](image-1.png)
@@ -124,8 +194,8 @@ Make sure to configure `vite.config.js` properly for GitHub Pages (e.g., `base` 
 ## 👨‍💻 Author
 
 **Nikunj Hadiya**  
-web Developer | IT Consultant  
-[LinkedIn](https://www.linkedin.com/in/nikunjhadiya/) • [Portfolio](Currently not available) • [Email](mailto:ahirnikunj1122@gmail.com) | (mailto:nikasus66@gmail.com)
+Web Developer | IT Consultant  
+[LinkedIn](https://www.linkedin.com/in/nikunjhadiya/) • [Portfolio](Currently not available) • [Email](mailto:nikasus66@gmail.com)
 
 ---
 
