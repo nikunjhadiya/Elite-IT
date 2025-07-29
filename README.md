@@ -1,148 +1,155 @@
 
 # 🌐 Elite IT - Company Website
 
-A modern, multi-page, responsive website built for an IT services company using **React + Vite**. This project showcases services, blog articles, developer hiring, global presence, and company insights with a sleek user experience.
+A modern, multi-page, responsive website built for an IT services company using **React + Vite** and **Express + MongoDB**. This project showcases services, developer hiring, blogs, company insights, and more — all delivered with smooth UI and powerful backend integration.
 
 ---
 
 ## 🚀 Tech Stack
 
-- **Frontend**: React, React Router DOM
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS, CSS3
-- **Icons**: Font Awesome, Lucide
-- **Animation**: Framer Motion
-- **Linting**: ESLint (extendable)
-- **Deployment**: GitHub Pages, Vercel, or Netlify
+### Frontend
+- ⚛️ React with Vite
+- 🧩 React Router DOM
+- 🎨 Tailwind CSS & CSS3
+- 🖼️ Font Awesome, Lucide Icons
+- 🎞️ Framer Motion for animations
+- 🧹 ESLint (extendable)
+- ☁️ Deployable via GitHub Pages, Vercel, or Netlify
+
+### Backend
+- 🖥️ Node.js, Express.js
+- 🛢️ MongoDB (Atlas) with Mongoose
+- ✅ Express Validator for form validation
+- 🛡️ Helmet, CORS, dotenv for security
+- 📁 Multer for file uploads
+- 🚀 Deployable via Render, Railway, VPS
 
 ---
 
-## 🧩 Backend
-
-- **Server**: Node.js, Express.js
-- **Database**: MongoDB (MongoDB Atlas)
-- **ODM**: Mongoose
-- **Validation**: Express Validator
-- **Security**: dotenv, CORS, Helmet
-- **File Uploads**: Multer (for resume upload)
-- **Deployment**: Render / Railway / VPS
-
-### 📁 Backend Structure
+## 📁 Full Project Structure
 
 ```
-backend/
-├── models/
-│   └── HireForm.js          # Mongoose schema
-├── routes/
-│   └── HireRoutes.js        # Hire form API routes
-├── uploads/                 # Uploaded resumes
-├── .env                     # Mongo URI and secrets
-├── server.js                # Entry point
-└── package.json
-```
-
-### 📨 API Endpoints
-
-| Method | Endpoint        | Description               |
-|--------|------------------|---------------------------|
-| POST   | `/api/hire`      | Submit hire form data     |
-| GET    | `/api/hire`      | (Optional) Get submissions|
-
-### 🔧 Backend Setup
-
-1. Navigate to the backend folder:
-
-```bash
-cd backend
-```
-
-2. Install backend dependencies:
-
-```bash
-npm install
-```
-
-3. Create a `.env` file with your MongoDB credentials:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-```
-
-4. Start the backend server:
-
-```bash
-npm start
-```
-
-5. Test the `/api/hire` route using Postman or frontend form.
-
----
-
-## 📌 Features
-
-- ⚡ Fast and lightweight performance with Vite
-- 📱 Mobile-first, responsive design
-- 🧑‍💻 Hire Developers form with file upload & domain selection
-- 🧩 Reusable, clean components and structure
-- 🌍 Global reach, vision, mission, and team sections
-- ✍️ Blog and case studies layout
-- ✨ Smooth UI with Framer Motion animations
-
----
-
-## 📁 Project Structure
-
-```
-elite-it-website/
-├── public/                 # Static HTML and assets
+elite-it/
+├── backend/                     # Backend logic (Node.js + Express)
+│   ├── models/                 # Mongoose schemas
+│   │   └── HireForm.js
+│   ├── routes/                 # Express API routes
+│   │   └── HireRoutes.js
+│   ├── uploads/                # Uploaded resume files
+│   ├── .env                    # Environment variables
+│   ├── server.js               # Backend server entry
+│   └── package.json
+│
+├── src/                        # Frontend source files
+│   ├── assets/                # Images, icons, logos
+│   ├── components/            # Reusable UI components
+│   ├── pages/                 # Page-based routing components
+│   ├── App.jsx                # Routing configuration
+│   └── main.jsx               # App entry point
+│
+├── public/                    # Static HTML, favicon
 │   └── index.html
-├── src/
-│   ├── assets/             # Icons, images
-│   ├── components/         # Reusable UI components
-│   ├── pages/              # Route-based pages
-│   ├── App.jsx             # Route configuration
-│   └── main.jsx            # App entry point
+│
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── index.html
 ├── package.json
 ├── vite.config.js
-└── tailwind.config.js
+├── tailwind.config.js
+└── eslint.config.js
 ```
 
 ---
 
-## 🛠️ Getting Started
+## 📌 Key Features
 
-### 1. Clone the repository
+- 🚀 **Blazing fast Vite + React setup**
+- 📱 **Mobile-first responsive UI**
+- 🧑‍💼 **Hire Developers form** with domain selection & resume upload
+- 🧩 **Reusable components** with clean code structure
+- 🌍 **Company profile** with vision, mission, team, and reach
+- ✍️ **Blog & Case Study layout**
+- 🎞️ **Framer Motion animations** for smooth transitions
 
-```bash
-git clone https://github.com/your-username/elite-it-website.git
-cd elite-it-website
+---
+
+## 🧩 Backend Overview
+
+### 📁 Backend Directory Tree
+
+```
+backend/
+├── models/
+│   └── HireForm.js
+├── routes/
+│   └── HireRoutes.js
+├── uploads/
+├── .env
+├── server.js
+└── package.json
 ```
 
-### 2. Install frontend dependencies
+### 📨 API Endpoints
+
+| Method | Endpoint    | Description                  |
+|--------|-------------|------------------------------|
+| POST   | `/api/hire` | Submit hire form & file      |
+| GET    | `/api/hire` | (Optional) Get submissions   |
+
+### 🔧 Setup Instructions
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+Run the backend:
+
+```bash
+npm start
+```
+
+Use tools like **Postman** to test `/api/hire`.
+
+---
+
+## 🧠 Frontend Setup
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/nikunjhadiya/elite-it.git
+cd elite-it
+```
+
+### Step 2: Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Run the development server
+### Step 3: Start the development server
 
 ```bash
 npm run dev
 ```
 
-### 4. Build for production
+### Step 4: Build for production
 
 ```bash
 npm run build
 ```
 
-### 5. Preview the production build
+### Step 5: Preview production build
 
 ```bash
 npm run preview
@@ -150,44 +157,46 @@ npm run preview
 
 ---
 
-## 📦 Linting & Code Quality
+## 💡 Linting & Code Quality
 
-This project includes basic ESLint configuration. You can extend it with:
+This project includes ESLint configuration.
 
+You can extend it with:
 - `eslint:recommended`
 - `plugin:react/recommended`
 - `plugin:jsx-a11y/recommended`
 
-For TypeScript support, see [Vite React + TS Template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts).
+Optional:
+- TypeScript support via [Vite + TS Template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts)
 
 ---
 
-## 🌍 Deployment
+## 🌐 Deployment Guide
 
-You can deploy the production-ready build to:
+### Frontend
 
-- **GitHub Pages**
-- **Vercel**
-- **Netlify**
+Deploy to:
+- **Vercel** — instant CI/CD
+- **Netlify** — easy integration with Git
+- **GitHub Pages** — ensure `vite.config.js` has correct `base` path
 
-Make sure to configure `vite.config.js` properly for GitHub Pages (e.g., `base` path if in a subdirectory).
+### Backend
 
-Backend can be deployed using:
-
+Deploy to:
 - **Render**
 - **Railway**
-- **VPS / DigitalOcean / EC2**
+- **VPS (e.g., DigitalOcean, EC2)**
 
-Ensure `.env` values are set securely on the server.
+Set `.env` secrets securely on the deployment platform.
 
 ---
 
-## 📸 Screenshots
+## 📸 UI Screenshots
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+![Screenshot 1](image.png)
+![Screenshot 2](image-1.png)
+![Screenshot 3](image-2.png)
+![Screenshot 4](image-3.png)
 
 ---
 
@@ -195,10 +204,13 @@ Ensure `.env` values are set securely on the server.
 
 **Nikunj Hadiya**  
 Web Developer | IT Consultant  
-[LinkedIn](https://www.linkedin.com/in/nikunjhadiya/) • [Portfolio](Currently not available) • [Email](mailto:nikasus66@gmail.com)
+📧 [nikasus66@gmail.com](mailto:nikasus66@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/nikunjhadiya/)  
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE)
+
+---
