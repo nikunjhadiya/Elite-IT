@@ -127,7 +127,7 @@ Use tools like **Postman** to test `/api/hire`.
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/nikunjhadiya/elite-it.git
+git clone https://github.com/nikunjhadiya/Elite-IT.git
 cd elite-it
 ```
 
