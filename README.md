@@ -1,5 +1,5 @@
 
-# 🌐 Elite IT - Company Website
+# 🌐 Elite IT – Modern Company Website Demo
 
 A modern, multi-page, responsive website built for an IT services company using **React + Vite** and **Express + MongoDB**. This project showcases services, developer hiring, blogs, company insights, and more — all delivered with smooth UI and powerful backend integration.
 
