@@ -204,7 +204,7 @@ Set `.env` secrets securely on the deployment platform.
 
 **Nikunj Hadiya**  
 Web Developer | IT Consultant  
-📧 [nikasus66@gmail.com](mailto:nikasus66@gmail.com)  
+📧 [ahirnikunj1122@gmail.com](mailto:ahirnikunj1122@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/nikunjhadiya/)  
 
 ---
